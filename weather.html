@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .weather-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-4">
+<div class="max-w-2xl mx-auto">
+    <div class="card bg-white shadow-xl">
+        <div class="card-body">
+            <h2 class="text-3xl font-bold mb-4">Weather for <span class="text-indigo-600">[City Name]</span></h2>
+
+            <div class="mb-6">
+                <h3 class="text-2xl font-semibold mb-2">Current Weather:</h3>
+                <p class="text-lg">Temperature: <span class="font-bold">XX°C</span></p>
+                <p class="text-lg">Humidity: <span class="font-bold">XX%</span></p>
+                <p class="text-lg">Wind Speed: <span class="font-bold">XX km/h</span></p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-2">5-Day Forecast:</h3>
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
+                        <thead>
+                        <tr class="text-left">
+                            <th class="text-gray-500">Date</th>
+                            <th class="text-gray-500">Temp</th>
+                            <th class="text-gray-500">Conditions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Day1</td>
+                            <td>XX°C</td>
+                            <td class="flex items-center">
+                                <svg class="weather-icon text-yellow-400"><use href="#icon-sunny" /></svg>
+                                Sunny
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td>Day2</td>
+                            <td>XX°C</td>
+                            <td class="flex items-center">
+                                <svg class="weather-icon text-gray-400"><use href="#icon-cloudy" /></svg>
+                                Cloudy
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Day3</td>
+                            <td>XX°C</td>
+                            <td class="flex items-center">
+                                <svg class="weather-icon text-blue-400"><use href="#icon-rainy" /></svg>
+                                Rainy
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td>Day4</td>
+                            <td>XX°C</td>
+                            <td class="flex items-center">
+                                <svg class="weather-icon text-gray-300"><use href="#icon-partly-cloudy" /></svg>
+                                Partly Cloudy
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Day5</td>
+                            <td>XX°C</td>
+                            <td class="flex items-center">
+                                <svg class="weather-icon text-yellow-400"><use href="#icon-clear" /></svg>
+                                Clear
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SVG Definitions -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-sunny" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="currentColor" />
+        <circle cx="50" cy="50" r="35" fill="white" />
+    </symbol>
+    <symbol id="icon-cloudy" viewBox="0 0 100 100">
+        <path d="M25,60 a20,20 0 0,1 0,-40 a20,20 0 0,1 25,0 a20,20 0 0,1 25,0 a20,20 0 0,1 0,40 z" fill="currentColor" />
+    </symbol>
+    <symbol id="icon-rainy" viewBox="0 0 100 100">
+        <path d="M25,50 a20,20 0 0,1 0,-40 a20,20 0 0,1 25,0 a20,20 0 0,1 25,0 a20,20 0 0,1 0,40 z" fill="currentColor" />
+        <line x1="30" y1="70" x2="25" y2="85" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+        <line x1="50" y1="70" x2="45" y2="85" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+        <line x1="70" y1="70" x2="65" y2="85" stroke="currentColor" stroke-width="8" stroke-linecap="round" />
+    </symbol>
+    <symbol id="icon-partly-cloudy" viewBox="0 0 100 100">
+        <circle cx="30" cy="40" r="20" fill="#FFD700" />
+        <path d="M45,70 a20,20 0 0,1 0,-40 a20,20 0 0,1 25,0 a20,20 0 0,1 0,40 z" fill="currentColor" />
+    </symbol>
+    <symbol id="icon-clear" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="currentColor" />
+        <circle cx="50" cy="50" r="35" fill="white" />
+    </symbol>
+</svg>
+</body>
+</html>

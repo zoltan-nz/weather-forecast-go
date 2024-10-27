@@ -1,6 +1,7 @@
-package api
+package services
 
 import (
+	"github.com/zoltan-nz/weather-forecast-go/models"
 	"testing"
 )
 
@@ -11,19 +12,19 @@ func TestFetchLatLong(t *testing.T) {
 	tests := []struct {
 		name    string
 		city    string
-		want    LatLong
+		want    models.LatLong
 		wantErr bool
 	}{
 		{
 			name:    "Valid city",
 			city:    "London",
-			want:    LatLong{51.50853, -0.12574},
+			want:    models.LatLong{Lat: 51.50853, Long: -0.12574},
 			wantErr: false,
 		},
 		{
 			name:    "Invalid city",
 			city:    "NonExistentCity",
-			want:    LatLong{0, 0},
+			want:    models.LatLong{},
 			wantErr: true,
 		},
 	}

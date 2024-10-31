@@ -1,17 +1,20 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"github.com/zoltan-nz/weather-forecast-go/server"
+	"log"
+	"os"
 )
 
 func main() {
-	r := gin.Default()
+	logger := log.New(os.Stdout, "weather-forecast-go: ", log.LstdFlags|log.Lshortfile)
 
-	r.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Welcome to the Weather Forecast API")
-	})
+	srv := server.NewServer(logger)
+	srv.SetupRoutes()
 
-	r.Run(":8080")
+	logger.Printf("Starting server on :8080")
+	if err := srv.Run(":8080"); err != nil {
+		logger.Fatalf("Server failed to start: %v", err)
+	}
+
 }

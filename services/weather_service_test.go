@@ -1,7 +1,6 @@
 package services
 
 import (
-	"fmt"
 	"github.com/zoltan-nz/weather-forecast-go/models"
 	"log"
 	"os"
@@ -79,27 +78,4 @@ func validateWeatherData(t *testing.T, weather *models.WeatherData) {
 	if first.Temperature < -100 || first.Temperature > 100 {
 		t.Errorf("Expected temperature in range -100..100, got %f", first.Temperature)
 	}
-}
-
-type mockWeatherService struct {
-	shouldError bool
-}
-
-func (m *mockWeatherService) FetchWeather(latLong models.LatLong) (*models.WeatherData, error) {
-	if m.shouldError {
-		return nil, fmt.Errorf("error fetching weather data")
-	}
-
-	return &models.WeatherData{
-		HourlyTemperatures: []models.HourlyTemperature{
-			{
-				Time:        "2021-06-01T00:00",
-				Temperature: 20.5,
-			},
-			{
-				Time:        "2021-06-01T01:00",
-				Temperature: 19.8,
-			},
-		},
-	}, nil
 }

@@ -79,11 +79,8 @@ We're building a web-based weather forecast application that allows users to sea
 
 ## 3. API Endpoints
 
-- GET /api/weather?city={cityname}
+- GET /api/weather/:city
     - Returns weather data for the specified city
-- GET /api/stats
-    - Requires authentication
-    - Returns statistics about recent searches
 
 ## 4. Todo List
 
@@ -96,13 +93,13 @@ We're building a web-based weather forecast application that allows users to sea
     - [x] Add error handling and input validation
 
 3. Weather Service
-    - [ ] Implement FetchWeather function (TDD)
-    - [ ] Parse and structure weather data (current and 5-day forecast)
+    - [x] Implement FetchWeather function (TDD)
+    - [x] Parse and structure weather data (current and 5-day forecast)
 
 4. API Server
-    - [ ] Set up Gin web framework
-    - [ ] Create /api/weather endpoint
-    - [ ] Integrate Geo Location and Weather services
+    - [x] Set up Gin web framework
+    - [x] Create /api/weather endpoint
+    - [x] Integrate Geo Location and Weather services
 
 5. Database Integration
     - [ ] Set up PostgreSQL connection
@@ -134,15 +131,7 @@ We're building a web-based weather forecast application that allows users to sea
     - [ ] Write API documentation
     - [ ] Add usage instructions in README.md
 
-## 5. Data Structures
-
-- LatLong: {Latitude: float64, Longitude: float64}
-- CurrentWeather: {Temperature: float64, Humidity: float64, WindSpeed: float64}
-- Forecast: {Date: string, Temperature: float64, Conditions: string}
-- WeatherData: {City: string, CurrentWeather: CurrentWeather, Forecast: []Forecast}
-- SearchStat: {City: string, Count: int}
-
-## 6. External APIs
+## External APIs
 
 - Geocoding API: https://geocoding-api.open-meteo.com/v1/search
 - Weather API: https://api.open-meteo.com/v1/forecast
